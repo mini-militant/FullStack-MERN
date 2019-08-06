@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
-import { render } from 'react-dom';
+import ReactDOM,{ render } from 'react-dom';
 import {store} from './Client/Store'
+import Dashboard from './Client/Components/Dashboard'
 import './style.css';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'React'
+      name: 'React' 
     };
     
   }
@@ -15,9 +16,7 @@ class App extends Component {
   render() {
     return (
       <div>
-       {console.log('hi')}
-       {console.log(store.getState())
-       } 
+       <Dashboard/>
       </div>
     );
   }
