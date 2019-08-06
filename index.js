@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
+import {store} from './Client/Store'
 import './style.css';
 
 class App extends Component {
@@ -9,15 +9,15 @@ class App extends Component {
     this.state = {
       name: 'React'
     };
+    
   }
 
   render() {
     return (
       <div>
-        <Hello name={this.state.name} />
-        <p>
-          Start editing to see some magic happen :)
-        </p>
+       {console.log('hi')}
+       {console.log(store.getState())
+       } 
       </div>
     );
   }
