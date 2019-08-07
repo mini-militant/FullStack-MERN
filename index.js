@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ReactDOM,{ render } from 'react-dom';
 import {store} from './Client/Store'
-import Dashboard from './Client/Components/Dashboard'
+import {ConnectedDashBoard} from './Client/Components/DashBoard'
+import {Provider} from 'react-redux'
+
 import './style.css';
 
 class App extends Component {
@@ -16,7 +18,12 @@ class App extends Component {
   render() {
     return (
       <div>
-       <Dashboard/>
+       
+       <Provider store={store}>
+        <div>
+          <ConnectedDashBoard/>
+        </div>
+       </Provider>
       </div>
     );
   }
