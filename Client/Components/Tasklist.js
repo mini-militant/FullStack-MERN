@@ -1,20 +1,24 @@
 import React from 'react'
 import {connect} from 'react-redux'
 
-export const TaskList=({tasks})=>(
+export const TaskList=({tasks,name})=>(
   <div>
     
-    {console.log(tasks)}
+    <h3>{name}</h3>
     {tasks.map(task=>
     <div>
     {task.name}
     </div>)}
   </div>
 )
+//how do we know what tasks to include? so this function
 
-function mapStateToProps(state){
+const mapStateToProps=(state,ownProps)=>{
+  let groupID=ownProps.id;
   return{
-    tasks:state.tasks
+    name:ownProps.name,
+    id:ownProps.id,
+    tasks:state.tasks.filter(task=>task.group===groupID)
   }  
 }
 
