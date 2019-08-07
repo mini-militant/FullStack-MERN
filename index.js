@@ -5,6 +5,7 @@ import {ConnectedDashBoard} from './Client/Components/DashBoard'
 import {Provider} from 'react-redux'
 import {Router,Route} from 'react-router-dom'
 import {history} from './Client/Store/history'
+import {ConnectedNavigation} from './Client/Components/Navigation'
 import './style.css';
 
 class App extends Component {
@@ -23,9 +24,13 @@ class App extends Component {
        <div>
        <Provider store={store}>
         <div>
+        helo
           {/*<ConnectedDashBoard/>*/}
-          <Route exact path = "/dashboard" render ={()=>(<ConnectedDashBoard/>)}/>
-
+          <ConnectedNavigation/>
+          <Route 
+            exact 
+            path = "/dashboard" 
+            render ={()=>(<ConnectedDashBoard/>)}/>
         </div>
        </Provider>
       </div>
